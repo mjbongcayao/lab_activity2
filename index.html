@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Simple Tutorial Website</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed 60%, #ec4899);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+  }
+  .container {
+    background: #fff;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 24px;
+    border-top: 10px solid #fbbf24;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+    text-align: center;
+  }
+  h1 { margin: 0 0 8px; font-size: 2.2rem; color: #1e1b4b; }
+  .intro { color: #555; font-size: 18px; margin: 0 0 28px; }
+  h2 { color: #7c3aed; margin: 0 0 16px; }
+  ol { list-style: none; padding: 0; margin: 0 auto 28px; max-width: 420px; text-align: left; counter-reset: step; }
+  li {
+    counter-increment: step;
+    display: flex; align-items: center; gap: 14px;
+    background: #f5f3ff; margin-bottom: 10px; padding: 10px 14px;
+    border-radius: 12px; color: #333; font-size: 17px;
+  }
+  li::before {
+    content: counter(step);
+    flex: none; width: 30px; height: 30px; border-radius: 50%;
+    background: #7c3aed; color: #fff; font-weight: bold;
+    display: flex; align-items: center; justify-content: center;
+  }
+  button {
+    padding: 12px 28px; border: 0; border-radius: 999px;
+    background: #ec4899; color: #fff; font-size: 16px; font-weight: bold;
+    cursor: pointer; transition: transform .15s;
+  }
+  button:hover { transform: scale(1.06); }
+  button:focus-visible { outline: 3px solid #fbbf24; outline-offset: 3px; }
+  #status { margin: 16px 0 0; min-height: 24px; color: #16a34a; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>My Simple Tutorial Website</h1>
+  <p class="intro">Welcome to my website. This page was created for Lab Activity 2.</p>
+
+  <h2>How to Create a Simple Website</h2>
+  <ol>
+    <li>Create an HTML file.</li>
+    <li>Add your content.</li>
+    <li>Style the page using CSS.</li>
+    <li>Upload the project to GitHub.</li>
+    <li>Deploy it using Netlify.</li>
+  </ol>
+
+  <button onclick="document.getElementById('status').textContent = 'Website is working! Yeheyy..'">Test Website</button>
+  <p id="status" aria-live="polite"></p>
+</div>
+
+</body>
+</html>
